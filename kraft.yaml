@@ -1,0 +1,64 @@
+---
+specification: '0.5'
+name: wrk
+unikraft:
+  version: '612e932'
+  kconfig:
+    - CONFIG_LIBUKLIBPARAM=y
+    - CONFIG_LIBUKSCHEDCOOP=y
+    - CONFIG_LIBSYSCALL_SHIM=y
+    - CONFIG_LIBPOSIX_LIBDL=y
+    - CONFIG_LIBPOSIX_PROCESS=y
+    - CONFIG_LIBPOSIX_USER=y
+    - CONFIG_LIBPOSIX_SYSINFO=y
+    - CONFIG_UKSYSINFO=y
+    - CONFIG_LIBUKMMAP=y
+    - CONFIG_LIBUKTIME=y
+    - CONFIG_LIBDEVFS=y
+    - CONFIG_LIBUKSWRAND=y
+    - CONFIG_LIBUKSWRAND_DEVFS=y
+    - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
+    - CONFIG_LIBVFSCORE_ROOTFS_RAMFS=y
+    - CONFIG_LIBVFSCORE_ROOTFS="ramfs"
+    - CONFIG_LIBUKDEBUG=y
+    - CONFIG_LIBUKDEBUG_ANSI_COLOR=y
+targets:
+  - architecture: x86_64
+    platform: kvm
+libraries:
+  pthread-embedded:
+    version: c59d7d6
+    kconfig:
+      - CONFIG_LIBPTHREAD_EMBEDDED=y
+  newlib:
+    version: 676244e
+    kconfig:
+      - CONFIG_LIBNEWLIBC=y
+  lwip:
+    version: 3c85bd4
+    kconfig:
+      - CONFIG_LWIP_UKNETDEV=y
+      - CONFIG_LWIP_THREADS=y
+      - CONFIG_LWIP_AUTOIFACE=y
+      - CONFIG_LWIP_SOCKET=y
+      - CONFIG_LWIP_IPV4=y
+      - CONFIG_LWIP_IPV6=y
+      - CONFIG_LWIP_UDP=y
+      - CONFIG_LWIP_RAW=y
+      - CONFIG_LWIP_DNS=y
+      - CONFIG_LWIP_ICMP=y
+  openssl:
+    version: staging
+    kconfig:
+      - CONFIG_LIBOPENSSL=y
+  lua:
+    version: staging
+    kconfig:
+      - CONFIG_LIBLUA=y
+  wrk:
+    version: 0ed8273
+    kconfig:
+      - CONFIG_LIBWRK=y
+      - CONFIG_LIBWRK_MAIN_FUNCTION=y
+volumes: {}
+networks: {}

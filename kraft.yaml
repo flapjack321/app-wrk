@@ -58,7 +58,7 @@ libraries:
       - CONFIG_LIBLUA=y
       - CONFIG_LIBLUA_MAIN_FUNCTION=n
   wrk:
-    version: 0ed8273
+    version: staging
     kconfig:
       - CONFIG_LIBWRK=y
       - CONFIG_LIBWRK_MAIN_FUNCTION=y

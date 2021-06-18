@@ -2,7 +2,7 @@
 specification: '0.5'
 name: wrk
 unikraft:
-  version: '612e932'
+  version: staging
   kconfig:
     - CONFIG_LIBUKLIBPARAM=y
     - CONFIG_LIBUKSCHEDCOOP=y
@@ -27,15 +27,15 @@ targets:
     platform: kvm
 libraries:
   pthread-embedded:
-    version: c59d7d6
+    version: staging
     kconfig:
       - CONFIG_LIBPTHREAD_EMBEDDED=y
   newlib:
-    version: 676244e
+    version: staging
     kconfig:
       - CONFIG_LIBNEWLIBC=y
   lwip:
-    version: 3c85bd4
+    version: staging
     kconfig:
       - CONFIG_LWIP_UKNETDEV=y
       - CONFIG_LWIP_THREADS=y
@@ -51,10 +51,13 @@ libraries:
     version: staging
     kconfig:
       - CONFIG_LIBOPENSSL=y
+      - CONFIG_LIBOPENSSL_LIBSSL=y
+      - CONFIG_LIBOPENSSL_LIBCRYPTO=y
   lua:
     version: staging
     kconfig:
       - CONFIG_LIBLUA=y
+      - CONFIG_LIBLUA_MAIN_FUNCTION=n
   wrk:
     version: 0ed8273
     kconfig:
